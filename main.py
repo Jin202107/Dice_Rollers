@@ -1,24 +1,23 @@
 import random
 def dice() -> int:
-    """Return an random integer value"""
+    """Return an random integer value."""
     return random.randint(1, 6)
 
 def roll(num : int) -> list:
-    """Return the list value of inputed number of random integer"""
+    """Return the list value of inputed number of random integer."""
     return [dice() for i in range(num)]
 
 def getDiceFace(index : int) -> str:
-    """Return each dice face accordingly to the inputed integer.\nEX) 1 >> \"⚀\"\nThe input should be 1 to 6"""
+    """Return each dice face accordingly to the inputed integer.\nEX) 1 >> \"⚀\"\nThe input should be 1 to 6."""
     return {1 : u"\u2680", 2 : u"\u2681", 3 : u"\u2682", 4 : u"\u2683", 5 : u"\u2684", 6 : u"\u2685"}.get(index, None)
 
 def listDiceFace(lis : list) -> list:
-    '''Return each dice face list accordingly to the inputed list\nEX) [1, 2, 3] >> ["⚀", "⚁", "⚂"]'''
+    '''Return each Dice Face list accordingly to the inputed list.\nEX) [1, 2, 3] >> ["⚀", "⚁", "⚂"]'''
     return [getDiceFace(i) for i in lis]
 
 def printDiceRoll(diceRoll : list) -> None:
-    """Print both Dice Roll list and Dice Face list in one line"""
+    """Print both Dice Roll list and Dice Face list.\nEX) Result : ⚀, ⚁, ⚂ (It's 1, 2, 3)"""
     print(f'Result : {", ".join(listDiceFace(diceRoll))} (It\'s {", ".join(map(str, diceRoll))})')
-
 
 #110 Meter Hurdles
 print("""Throw all five dice, up to 6 times, until you are satisfied with the result.
