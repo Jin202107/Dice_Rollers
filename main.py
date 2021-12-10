@@ -1,21 +1,22 @@
-# test
-
 import random
-def dice():
+def dice() -> int:
     """Return an random integer value"""
     return random.randint(1, 6)
 
-def roll(num):
-    """Return the list value of number of random integer"""
+def roll(num : int) -> list:
+    """Return the list value of inputed number of random integer"""
     return [dice() for i in range(num)]
 
-def getDiceFace(index):
-    return {1 : u"\u2680", 2 : u"\u2681", 3 : u"\u2682", 4 : u"\u2683", 5 : u"\u2684", 6 : u"\u2685"}.get(index)
+def getDiceFace(index : int) -> str:
+    """Return each dice face accordingly to the inputed integer.\nEX) 1 >> \"⚀\"\nThe input should be 1 to 6"""
+    return {1 : u"\u2680", 2 : u"\u2681", 3 : u"\u2682", 4 : u"\u2683", 5 : u"\u2684", 6 : u"\u2685"}.get(index, None)
 
-def listDiceFace(lis):
+def listDiceFace(lis : list) -> list:
+    '''Return each dice face list accordingly to the inputed list\nEX) [1, 2, 3] >> ["⚀", "⚁", "⚂"]'''
     return [getDiceFace(i) for i in lis]
 
-def printDiceRoll(diceRoll):
+def printDiceRoll(diceRoll : list) -> None:
+    """Print both Dice Roll list and Dice Face list in one line"""
     print(f'Result : {", ".join(listDiceFace(diceRoll))} (It\'s {", ".join(map(str, diceRoll))})')
 
 
