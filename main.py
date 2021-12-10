@@ -1,3 +1,5 @@
+# test
+
 import random
 def dice():
     """Return an random integer value"""
