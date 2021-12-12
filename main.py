@@ -28,7 +28,7 @@ def partition(symbol = "-", length = 77, middle = "") -> str:
 scores = []
 
 #110 Meter Hurdles
-print(partition(middle = "110 Meter Hurdles"), """Throw all five dice, up to 6 times, until you are satisfied with the result.
+print(partition(middle = "110 Meter Hurdles"), partition(), """Throw all five dice, up to 6 times, until you are satisfied with the result.
 The final score will be the total value of all five dice of the last attempt.""", partition(), sep = "\n")
 
 final = 0
@@ -44,13 +44,13 @@ for i in range(6):
         break
 
 scores.append(final)
-print(partition(middle = "Gamed ended"), partition(), "\n", partition(middle = "Pole Vault"), sep = "\n")
+print(partition(middle = "Gamed ended"), partition(), "\n", sep = "\n")
 
 #Pole-Vault
 
-print("""Jumping starts at the height of 10 and is increased by 2 each turn.\nPlayers take turn for each height or can decide to skip it.
+print(partition(middle = "Pole Vault"), partition(), """Jumping starts at the height of 10 and is increased by 2 each turn.\nPlayers take turn for each height or can decide to skip it.
 You have three attempts for each height.\nThrow two to eight dice to equal or exceeds the current height without any 1s.
-The final socre will be the maximum height which was mastered.""", partition(), sep = "\n")
+The final socre will be the maximum height which was mastered.""", sep = "\n")
 
 height = 10
 nexth = 2
@@ -89,7 +89,7 @@ while True:
         final = height
         break
     if not final == height:
-        score.append(final)
+        scores.append(final)
         break
     height += nexth
-print(partition("Game Ended"), partition(), "\n", partition(middle = "Scores"), f"110 Meter Hurdles - {scores[0]}\nPole-Vault - {scores[1]}", sep = "\n")
+print(partition(middle = "Game Ended"), partition(), "\n", partition(middle = "Scores"), f"110 Meter Hurdles - {scores[0]}\nPole-Vault - {scores[1]}", sep = "\n")
